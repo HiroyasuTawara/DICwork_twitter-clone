@@ -1,7 +1,2 @@
-<%= form_with(model:@post, local: true)do|form| %>
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h2>新規投稿</h2>
+<%= render 'form' %>

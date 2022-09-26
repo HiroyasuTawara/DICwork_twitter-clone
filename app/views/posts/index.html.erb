@@ -6,6 +6,7 @@
     <th>ユーザーネーム</th>
     <td><%= post.content %><td>
     <td id="投稿日"><%= post.created_at %><td>
+    <td><%= link_to '編集する', edit_post_path(post.id) %></td>
     <td><%= link_to '削除する', post_path(post.id), method: :delete, data: { confirm: '投稿を削除してよろしいですか？'} %></td>
   </tr>
 <% end %>

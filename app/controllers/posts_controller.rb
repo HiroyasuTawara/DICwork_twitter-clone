@@ -13,6 +13,17 @@ class PostsController < ApplicationController
     redirect_to new_post_path
   end
 
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to posts_path, notice: "投稿を編集しました。"
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @post.destroy
     redirect_to posts_path, notice:"投稿を削除しました。"
@@ -27,5 +38,4 @@ private
   def set_post
     @post = Post.find(params[:id])
   end
-  
 end
