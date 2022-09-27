@@ -1,0 +1,157 @@
+$baseColor:   #58aeed; 
+
+div.t_container{
+  padding: 0;
+  background: #ffffff;
+  max-width: 400px;
+  overflow: hidden;
+  margin: auto;
+  font-size: 80%;
+  border: solid 1px #eeeeee;
+}
+
+footer{
+  margin: auto;
+  max-width: 400px;
+}
+
+.t_title {
+  background: $baseColor;
+  padding: 5px 0px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.t_contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  &.scroll {
+    height: 90vh;
+    overflow-y: scroll;
+  }
+
+  .t_block {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px #eeeeee;
+    overflow: hidden;
+
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    figure {
+      width: 50px;
+      padding: 0;
+      margin: 0;
+      float: left;
+      width: 50px;
+
+      img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .t_block_text {
+      margin: 0;
+      position: relative;
+      margin-left: 60px;
+      padding-right: 10px;
+
+      .name {
+        font-weight: bold;
+
+        .name_reply {
+          color: #8a9aa4;
+          margin-left: 10px;
+        }
+      }
+
+      .date {
+        position: absolute;
+        top:0;
+        right: 20px;
+        text-align:right;
+        color: #8a9aa4;
+      }
+      
+      .t_icon {
+
+        br {
+          display: none;
+        }
+        
+        span{
+          float: right;
+          padding-right: 10px;
+            img {
+            width: 20px;
+            height: 20px;
+            display: block;
+            float: right;
+            }
+        }
+
+        span.tooltips {
+          display: none;
+          position: absolute;
+          bottom: 3px;
+          z-index: 1000;
+          padding: 0.3em;
+          color: #FFFFFF;
+          background: #777;
+          border-radius: 0.5em;
+        }
+        span:hover .tooltips {
+          display: block;
+        }
+
+      }
+      
+      .text {
+
+        margin: 5px 0;
+
+        .in-pict img{
+          border-radius: 20px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          margin: 5px 0;
+          width: 95%;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.bottom{
+  display: flex;
+  position: relative;
+  background: $baseColor;
+  padding: 5px;
+  a{
+    padding-left: 5px;
+    color: #ffffff;
+  }
+  p#notice{
+    font-size: 75%;
+    margin: 0px;
+    padding-right: 5px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%,-50%);
+    color: #ffffff;}
+}

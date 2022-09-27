@@ -1,16 +1,29 @@
-<h1>コピったー</h1>
-<p><%= notice %></p>
-<table id="time_line">
-<% @posts.each do |post| %>
-  <tr>
-    <th>ユーザーネーム</th>
-    <td><%= post.content %><td>
-    <td id="投稿日"><%= post.created_at.strftime("%y-%m-%d %H:%M") %><td>
-    <td><%= link_to '編集する', edit_post_path(post.id) %></td>
-    <td><%= link_to '削除する', post_path(post.id), method: :delete, data: { confirm: '投稿を削除してよろしいですか？'} %></td>
-  </tr>
-<% end %>
-</table>
-
-<%= link_to "新規投稿", new_post_path %>
+<div class="t_contents scroll">
+  <% @posts.each do |post| %>
+    <div class="t_block">
+      <figure>
+        <img src="https://4.bp.blogspot.com/-4r4SrjKvdhA/WIHlsNqzNdI/AAAAAAABBQw/Cm4az2TC2-AiTWFVdGS_DS2XLWJo2FiJgCLcB/s800/sports_softball__ball.png" alt="アイコン">
+      </figure>
+      <div class="t_block_text">
+        <div class="name">ユーザーネーム<span class="name_reply">@usr_id</span></div>
+        <div class="date"><%= post.created_at.strftime("%y-%m-%d %H:%M") %></div>
+        <div class="text"><%= post.content %></div>
+        <div class="t_icon">
+          <span class="edit">
+            <span class="tooltips">編集</span>
+            <%= link_to image_tag("t-edit.png"), edit_post_path(post.id) %>
+          </span>
+          <span class="delete">
+            <span class="tooltips">削除</span>
+            <%= link_to image_tag("t-delete.png"),post_path(post.id), method: :delete, data: { confirm: '投稿を削除してよろしいですか？'} %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %> 
+</div> 
+<div class="bottom">
+  <%= link_to "+新規投稿", new_post_path %>
+  <p id="notice"><%= notice %></p>
+</div>
 
